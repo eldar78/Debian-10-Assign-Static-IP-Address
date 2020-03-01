@@ -9,18 +9,6 @@ This file may look like the following.
 
 Edit the configuration as follows.
 
-    auto ens18
-    iface ens18 inet static
-      address 192.168.0.2
-      netmask 255.255.255.0
-      gateway 192.168.0.1
-      dns-nameservers 89.207.128.252 89.207.130.252
-
-Or like this, as I have in my config file on VMWARE 
--------------------------------------
-# This file describes the network interfaces available on your system
-# and how to activate them. For more information, see interfaces(5).
-
 source /etc/network/interfaces.d/*
 
 # The loopback network interface
@@ -38,16 +26,12 @@ iface eth0 inet static
            gateway 192.168.233.2
 
 
--------------------------------------
+# Make sure not to change the loopback adapter config. After the change, it will look something like the following screenshot.
 
+# Save the file and exit from the editor.
+# Step 5: Restart Networking Service
 
-
-Make sure not to change the loopback adapter config. After the change, it will look something like the following screenshot.
-
-Save the file and exit from the editor.
-Step 5: Restart Networking Service
-
-Restart the networking service so that the updated configuration can be applied. Run the command.
+# Restart the networking service so that the updated configuration can be applied. Run the command.
 
     sudo systemctl restart networking
 
